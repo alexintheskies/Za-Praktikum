@@ -1,0 +1,129 @@
+body{
+	margin:0px;
+	padding:0px;
+}
+#headline{
+	width: 560px;
+	height: 120px;
+}
+#background{
+	background-color: black;
+	height: 120px;
+	position: sticky;
+	z-index: 1;
+}
+.categories{
+	margin: 0px;
+	padding: 0px;
+}
+#locations{
+	border: 0px solid transparent;
+	width: 33%;
+	height: 100%;
+	background-image: url(slike/Locations2.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: fixed;
+	display: inline-block;
+	transition-duration: 1s;
+	filter:grayscale(100%);
+}
+#quotes{
+	border: 0px solid transparent;
+	width: 34%;
+	height: 100%;
+	background-image: url(slike/Quotes2.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	left:33%;
+	position: fixed;
+	display: inline-block;
+	transition-duration: 1s;
+	filter:grayscale(100%);
+}
+#characters{
+	border: 0px solid transparent;
+	width: 33%;
+	height: 100%;
+	background-image: url(slike/characters2.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	left:67%;
+	position: fixed;
+	display: inline-block;
+	transition-duration: 1s;
+	filter:grayscale(100%);
+}
+#characters:hover{
+	filter:grayscale(0%);
+	transition-duration: 1s;
+}
+#locations:hover{
+	filter:grayscale(0%);
+	transition-duration: 1s;
+}
+#quotes:hover{
+	filter:grayscale(0%);
+	transition-duration: 1s;
+}
+.text{
+	transition-property: opacity;
+	transition-duration: 1s;
+	font-family: cambria;
+	font-size: 3em;
+	color: white;
+	opacity: 0;
+	text-align: center;
+}
+#locations:hover #text1{
+	opacity: 1;
+	transition-duration: 1s;
+}
+#quotes:hover #text2{
+	opacity: 1;
+	transition-duration: 1s;
+}
+#characters:hover #text3{
+	opacity: 1;
+	transition-duration: 1s;
+}
+a.visited{
+	text-decoration: none;
+}
+a.link{
+	text-decoration: none;
+}
+a.hover{
+	text-decoration: none;
+}
+a.active{
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+}
+@media only screen and (max-width: 910px){
+	p{
+		display: none;
+	}
+}
+@media only screen and (max-width: 1200px){
+	#left{
+		display:none;
+	}
+	#right{
+		display: none;
+	}
+}
+.titletext{
+	position: relative;
+	font-family: cambria;
+	font-size: 2em;
+	font-style: italic;
+	color:silver;
+	bottom: 35px;
+	display: inline-block;
+}
+#center{
+	margin-right: 4.5%;
+}

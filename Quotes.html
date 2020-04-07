@@ -1,0 +1,142 @@
+<html>
+	<head>
+		<title>Quote Trivia</title>
+		<link rel="icon" href="slike/favicon.png" type="image" width="16" height="16">
+		<meta charset="UTF-8">
+		<link href="style1.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body id="Quotes">
+		<script>
+			var text = '{"questions":[' +
+				  '{"question":"Love is poison. A sweet poison, yes, but it will kill you all the same.", "answer":"Cersei Lannister"},' +
+				  '{"question":"All men must die, but we are not men.", "answer":"Daenerys Targaryen"},' +
+				  '{"question":"All men should keep their word, kings most of all.", "answer":"Robb Stark"},' +
+				  '{"question":"All rulers are either butchers or meat.", "answer":"Daario Naharis"},' +
+				  '{"question":"Schemes are like fruit, they require a certain ripening.", "answer":"Tyrion Lannister"},' +
+				  '{"question":"DaEnErYs Is mY qUeEn.", "answer":"Jon Snow"},' +
+				  '{"question":"There are no men like me. Only me.", "answer":"Jaime Lannister"},' +
+				  '{"question":"Kill me and be cursed! You are no king of mine.", "answer":"Rickard Karstark"},' +
+				  '{"question":"Bricks and blood built Astapor, and bricks and blood her people.", "answer":"Barristan Selmy"},' +
+				  '{"question":"Is there any creature on earth as unfortunate as an ugly woman?", "answer":"Catelyn Stark"}]}'
+
+			var obj = JSON.parse(text);
+
+			var counter = 0;
+			var wrongcounter = 0;
+
+			function Question(){
+				document.getElementById("question").innerHTML = obj.questions[counter].question;
+				localStorage.setItem("answer", obj.questions[counter].answer);
+			}
+			function Button(){
+				var x = document.getElementById("answer").value.toUpperCase();
+				var y = localStorage.getItem("answer").toUpperCase();
+				if (y == x){
+					document.getElementById("answer").style.color = "green";
+					document.getElementById("answer").value = "Correct!";
+					document.getElementById("show").style.opacity = "0";
+					document.getElementById("button").disabled = true;
+					setTimeout(function(){ Next(); }, 3000);
+					setTimeout(function(){ document.getElementById("showanswer").style.opacity = "0";}, 3000);
+				}
+				else if (x == ""){
+					document.getElementById("answer").placeholder = "Type something";
+					document.getElementById("answer").style.color = "red";
+					document.getElementById("answer").value = "";
+				}
+				else{
+					document.getElementById("answer").placeholder = "Wrong!";
+					document.getElementById("answer").style.color = "red";
+					document.getElementById("answer").value = "";
+					if (wrongcounter == 2){
+						document.getElementById("showanswer").style.opacity = "1";
+						wrongcounter = 0;
+					}
+					else{
+						wrongcounter++;
+					}
+				}
+			}
+			function Next(){
+				if (counter < 9){
+					counter++;
+					Question();
+					Clean();
+					document.getElementById("show").style.opacity = "1";
+					document.getElementById("button").disabled = false;
+				}
+				else{
+					document.getElementById("show").style.opacity = "0";
+					document.getElementById("info").style.visibility = "hidden";
+					document.getElementById("help").style.display = "none";
+					document.getElementById("welcome").style.display = "block";
+					document.getElementById("welcome").innerHTML = " Congratulations! You answered all of the questions!"
+					setTimeout(function(){ document.getElementById("welcome").style.opacity = "1";}, 1000);
+				}
+			}
+			function Clean(){
+				document.getElementById("answer").placeholder = "";
+				document.getElementById("answer").style.color = "black";
+				document.getElementById("answer").value = "";
+			}
+
+			function ShowText(){
+				document.getElementById("help").style.opacity = "1";
+			}
+
+			function HideText(){
+				document.getElementById("help").style.opacity = "0";
+			}
+
+			function Begin(){
+				Question();
+				document.getElementById("welcome").style.opacity = "0";
+				document.getElementById("begin").style.opacity = "0";
+				setTimeout(function(){
+
+					document.getElementById("welcome").style.display = "none";
+					document.getElementById("begin").style.display = "none";
+					document.getElementById("form").style.display = "block";
+					document.getElementById("question").style.display ="block";
+					document.getElementById("info").style.display = "block";
+				}, 1500);
+				document.getElementById("show").style.opacity = "1";
+			}	
+			function ShowAnswer(){
+				document.getElementById("answer").style.color = "black";
+				document.getElementById("answer").value = localStorage.getItem("answer", obj.questions[counter].answer);
+			}	
+		</script>
+		<a href="Home Page.html"><img src="slike/logo.png" id="headline"></a>
+		<div id="hamburger">
+			<ul id="dropdown"><li>Menu</li></ul>
+			<ul id="menu">
+				<li><a href="Locations.html">Locations</a></li>
+				<li><a href="Quotes.html">Quotes</a></li>
+				<li><a href="Characters.html">Characters</a></li>
+				<li><a href="Contact.html">Contact</a></li>
+			</ul>
+		</div>
+		<center>
+			<div id="parchment">
+				<div id="show2">
+					<p class="message" id="welcome">Welcome to the Game of Thrones quote trivia quiz! <br> Press the button below when ready to continue.</p>
+					<button id="begin" onclick="Begin()">Begin</button>
+				</div>
+				<div id="show">
+					<p id="question" class="message"></p>
+					<form id="form" autocomplete="off">
+						<input type="textbox" id="answer" onclick="Clean()" onkeypress="return event.keyCode != 13">
+							<br>
+						<input type="button" value="Submit" id="button" onclick="Button()">
+						<input type="button" name="showanswer" id="showanswer" value="Show Answer" onclick="ShowAnswer()">
+					</form>
+				</div>
+				<img src="slike/info.png" id="info" onmouseover="ShowText()" onmouseleave="HideText()">
+				<p id="help" style="right:170px"> Name the character that said the given quote.<br> The answer is not case-sensitive <br> and must be spelled correctly. </p>
+			</div>
+		</center>
+	</body>
+</html>
+

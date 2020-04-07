@@ -1,0 +1,319 @@
+#Contact{
+	background-image: url();
+	background-size: fill;
+	background-repeat: no-repeat;
+}
+#Characters{
+	background-image: url(slike/Characters.jpg);
+	background-size: fill;
+	background-repeat: no-repeat;
+}
+#Locations{
+	background-image: url(slike/Locations.png);
+	background-size: fill;
+	background-repeat: no-repeat;
+}
+#Quotes{
+	background-image: url(slike/Quotes.jpg);
+	background-size: fill;
+	background-repeat: no-repeat;
+}
+body{
+	margin:0px;
+	font-family: cambria;
+}
+#headline{
+	margin-left: 20px;
+	margin-top:80px;
+	padding: 0px;
+	position: absolute;
+	float:left;
+	width: 200px;
+	height: 80px;
+	display: block;
+}
+#menu{
+	position: sticky;
+	text-align: center;
+	text-transform: uppercase;
+	color: silver;
+	padding: 0px;
+	list-style-type: none;
+	background-color: black;
+	opacity: 0.8;
+	font-size: 1.2em;
+}
+#menu li{
+	display:inline-block;
+}
+#menu li a{
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-decoration: none;
+	color: silver;
+	display: block;
+	width:160px;
+	text-align: center;
+	background-color: black;
+	transition-property: background-color;
+	transition-duration: 0.5s;
+}
+#menu li:hover a{
+	transition-duration: 0.5s;
+	background-color: rgb(222,0,0);
+	color:white;
+	opacity: 0.9;
+}
+#menu li:active a{
+	background-color: rgb(180,0,0);
+	color:white;
+	opacity:0.8;
+}
+#dropdown{
+	position: absolute;
+	right: 0px;
+	margin-top: 0px;
+	text-align: center;
+	text-transform: uppercase;
+	color: silver;
+	padding: 0px;
+	list-style-type: none;
+	background-color: black;
+	opacity: 0.8;
+	font-size: 1.2em;
+	display: none;
+	z-index: 2;
+}
+#dropdown li{
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-decoration: none;
+	color: silver;
+	display: block;
+	width:160px;
+	text-align: center;
+	background-color: black;
+	transition-property: background-color;
+	transition-duration: 0.5s;
+}
+@media only screen and (max-width: 1000px){
+	#dropdown{
+		display: block;
+	}
+	#headline {
+		margin-top: 20px;
+		z-index: 1;
+	}
+	#menu{
+		position: absolute;
+		right: 0px;
+		margin-top: 62px;
+		z-index: 2;
+		display: none;
+	}
+	#menu li{
+		display: block;
+	}
+	#hamburger:hover #menu{
+		display: block;
+	}
+}	
+#parchment{
+	background-image: url(slike/Parchment.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 900px;
+	height: 700px;
+}
+#question{
+	display: none;
+}
+#form{
+	display:none;
+	transition-duration: 1.5s;
+	transition-delay: 1.5s;
+}
+.message{
+	font-family: cursive;
+	font-size: 1.5em;
+	font-style: italic;
+	padding-top: 180px;
+}
+#answer{
+	height: 22px;
+	width: 400px;
+	background-color: transparent;
+	box-shadow: 0px 2px;
+	border: hidden;
+	text-align: center;
+	font-family: cursive;
+	font-style: italic;
+	font-size: 1.2em;
+	padding-bottom: 10px;
+}
+#answer:focus{
+	outline:none;
+}
+#begin{
+	opacity:1;
+	margin-top: 30px;
+	background-color: transparent;
+	outline:none;
+	border:none;
+	display:block;
+	padding:10px 20px 10px 20px;
+	font-size: 1.2em;
+	font-style: italic;
+	font-family: cursive;
+	border: 1.5px solid gray;
+	transition-duration: 1.5s;
+}
+#begin:hover{
+	border: 1.5px solid black;
+}
+#begin:active{
+	color: gray;
+	border: 1.5px solid gray;
+}
+#show{
+	opacity: 0;
+	transition-delay: 1.5s;
+	transition-duration: 1.5s;
+}
+#show2{
+	opacity: 0;
+	animation-name: showanim;
+	animation-duration: 1.5s;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+#button{
+	margin-top: 30px;
+	background-color: transparent;
+	outline:none;
+	border:none;
+	display:block;
+	padding:10px 20px 10px 20px;
+	font-size: 1.2em;
+	font-style: italic;
+	font-family: cursive;
+	border: 1.5px solid gray;
+}
+#welcome{
+	opacity: 1;
+	transition-duration: 1.5s;
+}
+#button:hover{
+	border: 1.5px solid black;
+}
+#button:active{
+	color: gray;
+	border: 1.5px solid gray;
+}
+#next{
+	background-color: transparent;
+	outline:none;
+	border:none;
+	padding:10px 20px 10px 20px;
+	font-size: 1.2em;
+	font-style: italic;
+	font-family: cursive;
+	border: 1.5px solid gray;
+	margin-top: 200px;
+	margin-left: 550px;
+	visibility: hidden;
+}
+#next:hover{
+	border: 1.5px solid black;
+}
+#next:active{
+	color: gray;
+	border: 1.5px solid gray;
+}
+#info{
+	opacity: 0.8;
+	position: relative;
+	top: 150px;
+	right: 320px;
+	height: 40px;
+	width: 40px;
+	animation-name: infoanimation;
+	animation-direction: alternate-reverse;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	transform-origin: center;
+	display:none;
+}
+#info:hover{
+	opacity: 1;
+}
+#help{
+	position: relative;
+	top: 20px;
+	background-color:transparent;
+	font-family: cursive;
+	font-size: 1em;
+	margin-left: 100px;
+	opacity: 0;
+	transition-duration: 1s;
+}
+#showanswer{
+	top:200px;
+	left:250px;
+	position: relative;
+	background-color: transparent;
+	outline:none;
+	border:none;
+	display:inline-block;
+	padding:10px 20px 10px 20px;
+	font-size: 1.2em;
+	font-style: italic;
+	font-family: cursive;
+	color:black;
+	opacity: 0;
+}
+#showanswer:hover{
+	color:gray;
+}
+#showanswer:active{
+	color:black;
+}
+a.visited{
+	text-decoration: none;
+}
+a.link{
+	text-decoration: none;
+}
+a.hover{
+	text-decoration: none;
+}
+a.active{
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+}
+@keyframes infoanimation{
+	from {transform: scale(1.1,1.1);}
+	to {transform: scale(1,1)}
+}
+@keyframes nextanim{
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+@keyframes showanim{
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+::placeholder{
+	color:red;
+	opacity:0.8;
+}
+
+
+

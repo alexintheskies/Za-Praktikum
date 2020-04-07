@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<title>Contact</title>
+		<link rel="icon" href="slike/favicon.png" type="image" width="16" height="16">
+		<meta charset="UTF-8">
+		<link href="style3.css" type="text/css" rel="stylesheet">
+	</head>
+	<body id="Contact">
+		<script>
+			function Submit(){
+					try{
+						if (document.getElementById("name").value == "") throw "Can't be left empty!";
+					}
+
+					catch(err){
+						document.getElementById("name").value = err;
+						document.getElementById("name").style.color = "red";
+					}
+
+					try{
+						if (document.getElementById("email").value == "") throw "Can't be left empty!";
+					}
+
+					catch(err){
+						document.getElementById("email").value = err;
+						document.getElementById("email").style.color = "red";
+					}
+
+					try{
+						if (document.getElementById("question").value == "") throw "Can't be left empty!";
+					}
+
+					catch(err){
+						document.getElementById("question").value = err;
+						document.getElementById("question").style.color = "red";
+					}
+
+					try{
+						if (document.getElementById("answer").value == "") throw "Can't be left empty!";
+					}
+
+					catch(err){
+						document.getElementById("answer").value = err;
+						document.getElementById("answer").style.color = "red";
+					}
+
+
+					if(document.getElementById("name").style.color !== "red" && document.getElementById("email").style.color !== "red" && document.getElementById("question").style.color !== "red" && document.getElementById("answer").style.color !== "red" ){
+
+						document.getElementById("question").style.display = "none";
+						document.getElementById("answer").style.display = "none";
+						document.getElementById("name").value = "Your submission has been sent!";
+						document.getElementById("email").value = "Thank you for your contribution.";
+						document.getElementById("name").style.fontSize = "1.5em";
+						document.getElementById("email").style.fontSize = "1.5em";
+						document.getElementById("name").style.height = "35px";
+						document.getElementById("name").style.marginTop = "270px";
+						document.getElementById("email").style.height = "35px";
+						document.getElementById("name").style.boxShadow = "none";
+						document.getElementById("email").style.boxShadow = "none";
+
+						document.getElementById("submit").style.display = "none";
+					}
+				}
+			function Next(){
+
+			}
+			function ClearName(){
+				document.getElementById("name").value = "";
+				document.getElementById("name").style.color = "black";
+			}
+			function ClearEmail(){
+				document.getElementById("email").value = "";
+				document.getElementById("email").style.color = "black";
+			}
+			function ClearQuestion(){
+				document.getElementById("question").value = "";
+				document.getElementById("question").style.color = "black";
+			}
+			function ClearAnswer(){
+				document.getElementById("answer").value = "";
+				document.getElementById("answer").style.color = "black";
+			}
+		</script>
+		<a href="Home Page.html"><img src="slike/logo.png" id="headline"></a>
+		<div id="hamburger">
+			<ul id="dropdown"><li>Menu</li></ul>
+			<ul id="menu">
+				<li><a href="Locations.html">Locations</a></li>
+				<li><a href="Quotes.html">Quotes</a></li>
+				<li><a href="Characters.html">Characters</a></li>
+				<li><a href="Contact.html">Contact</a></li>
+			</ul>
+		</div>
+		<center>
+			<div id="parchment">
+				<form id="form" autocomplete="off">
+					<input type="textbox" placeholder = "Your name" id="name" onkeypress="return event.keyCode != 13" onclick="ClearName()">
+					<br>
+					<input type="textbox" placeholder = "Your email" id="email" onkeypress="return event.keyCode != 13" onclick="ClearEmail()">
+					<br>
+					<input type="textbox" placeholder = "The question" id="question" onkeypress="return event.keyCode != 13" onclick="ClearQuestion()">
+					<br>
+					<input type="textbox" placeholder = "The answer" id="answer" onkeypress="return event.keyCode != 13" onclick="ClearAnswer()">
+					<br>
+					<input type="button" id="submit" value="Submit" onclick="Submit()">
+				</form>
+			</div>
+		</center>
+	</body>
+</html>

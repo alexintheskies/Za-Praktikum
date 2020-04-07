@@ -1,0 +1,298 @@
+
+body{
+	margin:0px;
+	font-family: cambria;
+}
+#Contact{
+	background-image: url(slike/Contact.jpg);
+	background-size: fill;
+	background-repeat: no-repeat;
+}
+#Characters{
+	background-image: url(slike/Characters.jpg);
+	background-size: fill;
+	background-repeat: no-repeat;
+}
+#Locations{
+	background-image: url(slike/Locations.png);
+	background-size: fill;
+	background-repeat: no-repeat;
+}
+#Quotes{
+	background-image: url(slike/Quotes.jpg);
+	background-size: fill;
+	background-repeat: no-repeat;
+}
+#headline{
+	margin-left: 20px;
+	margin-top:80px;
+	padding: 0px;
+	position: absolute;
+	float:left;
+	width: 200px;
+	height: 80px;
+	display: block;
+}
+#form{
+	display: block;
+}
+#menu{
+	position: sticky;
+	text-align: center;
+	text-transform: uppercase;
+	color: silver;
+	padding: 0px;
+	list-style-type: none;
+	background-color: black;
+	opacity: 0.8;
+	font-size: 1.2em;
+}
+#menu li{
+	display:inline-block;
+}
+#menu li a{
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-decoration: none;
+	color: silver;
+	display: block;
+	width:160px;
+	text-align: center;
+	background-color: black;
+	transition-property: background-color;
+	transition-duration: 0.5s;
+}
+#menu li:hover a{
+	transition-duration: 0.5s;
+	background-color: rgb(222,0,0);
+	color:white;
+	opacity: 0.9;
+
+}
+#menu li:active a{
+	background-color: rgb(180,0,0);
+	color:white;
+	opacity:0.8;
+}
+#dropdown{
+	position: absolute;
+	right: 0px;
+	margin-top: 0px;
+	text-align: center;
+	text-transform: uppercase;
+	color: silver;
+	padding: 0px;
+	list-style-type: none;
+	background-color: black;
+	opacity: 0.8;
+	font-size: 1.2em;
+	display: none;
+	z-index: 2;
+}
+#dropdown li{
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-decoration: none;
+	color: silver;
+	display: block;
+	width:160px;
+	text-align: center;
+	background-color: black;
+	transition-property: background-color;
+	transition-duration: 0.5s;
+}
+@media only screen and (max-width: 910px){
+	#dropdown{
+		display: block;
+	}
+	#headline {
+		margin-top: 20px;
+		z-index: 1;
+	}
+	#menu{
+		position: absolute;
+		right: 0px;
+		margin-top: 62px;
+		z-index: 2;
+		display: none;
+	}
+	#menu li{
+		display: block;
+	}
+	#hamburger:hover #menu{
+		display: block;
+	}
+}	
+#parchment{
+	background-image: url(slike/Parchment.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 900px;
+	height: 700px;
+}
+#name{
+	margin-top: 170px;
+	height: 22px;
+	width: 400px;
+	background-color: transparent;
+	box-shadow: 0px 2px;
+	border: hidden;
+	text-align: center;
+	font-family: cursive;
+	font-style: italic;
+	font-size: 1.2em;
+	padding-bottom: 10px;
+}
+#email{
+	margin-top: 50px;
+	height: 22px;
+	width: 400px;
+	background-color: transparent;
+	box-shadow: 0px 2px;
+	border: hidden;
+	text-align: center;
+	font-family: cursive;
+	font-style: italic;
+	font-size: 1.2em;
+	padding-bottom: 10px;
+}
+#question{
+	margin-top: 50px;
+	height: 22px;
+	width: 700px;
+	background-color: transparent;
+	box-shadow: 0px 2px;
+	border: hidden;
+	text-align: center;
+	font-family: cursive;
+	font-style: italic;
+	font-size: 1.2em;
+	padding-bottom: 10px;
+}
+#answer{
+	margin-top: 50px;
+	height: 22px;
+	width: 400px;
+	background-color: transparent;
+	box-shadow: 0px 2px;
+	border: hidden;
+	text-align: center;
+	font-family: cursive;
+	font-style: italic;
+	font-size: 1.2em;
+	padding-bottom: 10px;
+}
+#submit{
+	margin-top: 50px;
+	background-color: transparent;
+	outline:none;
+	border:none;
+	display:block;
+	padding:10px 20px 10px 20px;
+	font-size: 1.2em;
+	font-style: italic;
+	font-family: cursive;
+	border: 1.5px solid gray;
+}
+#button{
+	margin-top: 50px;
+	background-color: transparent;
+	outline:none;
+	border:none;
+	display:block;
+	padding:10px 20px 10px 20px;
+	font-size: 1.2em;
+	font-style: italic;
+	font-family: cursive;
+	border: 1.5px solid gray;
+	display: none;
+}
+#submit:hover{
+	border: 1.5px solid black;
+}
+#submit:active{
+	color: gray;
+	border: 1.5px solid gray;
+}
+#name:focus{
+	outline:none;
+}
+#email:focus{
+	outline:none;
+}
+#question:focus{
+	outline:none;
+}
+#answer:focus{
+	outline:none;
+}
+#name::placeholder{
+	padding-right: 0px;
+	transition-duration: 0.4s;
+}
+#name:hover::placeholder{
+	transition-duration: 0.4s;
+	padding-right: 400px;
+}
+#email::placeholder{
+	padding-right: 0px;
+	transition-duration: 0.4s;
+}
+#email:hover::placeholder{
+	transition-duration: 0.4s;
+	padding-right: 400px;
+}
+#question::placeholder{
+	padding-right: 0px;
+	transition-duration: 0.4s;
+}
+#question:hover::placeholder{
+	transition-duration: 0.4s;
+	padding-right: 600px;
+}
+#answer::placeholder{
+	padding-right: 0px;
+	transition-duration: 0.4s;
+}
+#answer:hover::placeholder{
+	transition-duration: 0.4s;
+	padding-right: 400px;
+}
+#name:focus::placeholder{
+	padding-right: 400px;
+}
+#email:focus::placeholder{
+	padding-right: 400px;
+}
+#question:focus::placeholder{
+	padding-right: 600px;
+}
+#answer:focus::placeholder{
+	padding-right: 400px;
+}
+@media only screen and (max-width: 1000px){
+	#dropdown{
+		display: block;
+	}
+	#headline {
+		margin-top: 20px;
+		z-index: 1;
+	}
+	#menu{
+		position: absolute;
+		right: 0px;
+		margin-top: 62px;
+		z-index: 2;
+		display: none;
+	}
+	#menu li{
+		display: block;
+	}
+	#hamburger:hover #menu{
+		display: block;
+	}
+}
